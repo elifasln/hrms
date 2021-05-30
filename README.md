@@ -6,6 +6,8 @@
 
 #Sistemde bulunan genel iş pozisyonlarını listeleyecek APİ yazıldı.
 
+#Sisteme Swagger desteği getirildi.
+
 
 
 
