@@ -7,9 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="candidates")
-public class Candidates{
+public class Candidates extends User{
 	
 	
 	@Id
@@ -29,8 +30,9 @@ public class Candidates{
 	@Column(name="birth_year")
 	private int birth_year;
 	
+	
 	public Candidates(int id, String first_name, String last_name, String identity_number, int birth_year) {
-		super();
+		super()
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
