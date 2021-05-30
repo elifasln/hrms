@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kodlamaiocamp.hrms.business.abstracts.JobTitleService;
+import kodlamaiocamp.hrms.core.utilities.results.DataResult;
+import kodlamaiocamp.hrms.core.utilities.results.Result;
+import kodlamaiocamp.hrms.core.utilities.results.SuccessDataResult;
+import kodlamaiocamp.hrms.core.utilities.results.SuccessResult;
 import kodlamaiocamp.hrms.dataAccess.abstracts.JobTitleDao;
 import kodlamaiocamp.hrms.entities.concretes.JobTitle;
 
@@ -22,9 +26,20 @@ public class JobTitleManager implements JobTitleService {
 		this.jobTitleDao = jobTitleDao;
 	}
 	@Override
-	public List<JobTitle> getAll() {
+	public DataResult<List<JobTitle>> getAll()
+ {
 		
-		return this.jobTitleDao.findAll();
+		return new SuccessDataResult<List<JobTitle>>
+		//ben bir SuccesDataResult döndüreceğim
+		(this.jobTitleDao.findAll(),"data listelendi");
+		//onun datası jobTitleDao=this
+		//mesajı "data listelendi"
+	}
+	@Override
+	public Result add(JobTitle jobTitle) {
+		this.jobTitleDao.save(jobTitle); 
+		// save metodu ile iş poziyonu ekleme ve güncelleme 
+		return new SuccessResult("ürün eklendi");
 	}
 
 }

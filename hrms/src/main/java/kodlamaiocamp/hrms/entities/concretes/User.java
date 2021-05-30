@@ -8,22 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="job_titles")
-public class JobTitle {
+@Table(name="user")
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="title")
-	private String title;
+	@Column(name="email")
+	private String email;
 	
-	public JobTitle() {}
-	public JobTitle(int id, String title) {
+	@Column(name="password")
+	private String password;
+	
+	public User(int id, String email, String password) {
 		super();
 		this.id = id;
-		this.title = title;
+		this.email = email;
+		this.password = password;
 	}
 	public int getId() {
 		return id;
@@ -31,11 +34,17 @@ public class JobTitle {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getTitle() {
-		return title;
+	public String getEmail() {
+		return email;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
