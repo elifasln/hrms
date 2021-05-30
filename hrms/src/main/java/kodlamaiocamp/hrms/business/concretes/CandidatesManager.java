@@ -3,21 +3,23 @@ package kodlamaiocamp.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kodlamaiocamp.hrms.business.abstracts.CandidatesService;
 import kodlamaiocamp.hrms.core.utilities.results.DataResult;
 import kodlamaiocamp.hrms.core.utilities.results.Result;
 import kodlamaiocamp.hrms.core.utilities.results.SuccessDataResult;
+import kodlamaiocamp.hrms.core.utilities.results.SuccessResult;
 import kodlamaiocamp.hrms.dataAccess.abstracts.CandidatesDao;
 import kodlamaiocamp.hrms.entities.concretes.Candidates;
-import kodlamaiocamp.hrms.entities.concretes.Employees;
 
+@Service
 public class CandidatesManager implements CandidatesService {
 
 	private CandidatesDao candidatesDao;
 	
 	
-
+	@Autowired
 	public CandidatesManager(CandidatesDao candidatesDao) {
 		super();
 		this.candidatesDao = candidatesDao;
@@ -31,8 +33,8 @@ public class CandidatesManager implements CandidatesService {
 
 	@Override
 	public Result add(Candidates candidates) {
-		// TODO Auto-generated method stub
-		return null;
+		this.candidatesDao.save(candidates); 
+		return new SuccessResult("iş arayanlar eklendi");
 	}
 
 }

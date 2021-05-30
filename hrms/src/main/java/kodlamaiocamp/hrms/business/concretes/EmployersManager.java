@@ -3,6 +3,7 @@ package kodlamaiocamp.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kodlamaiocamp.hrms.business.abstracts.EmployersService;
 import kodlamaiocamp.hrms.core.utilities.results.DataResult;
@@ -11,6 +12,7 @@ import kodlamaiocamp.hrms.core.utilities.results.SuccessDataResult;
 import kodlamaiocamp.hrms.dataAccess.abstracts.EmployersDao;
 import kodlamaiocamp.hrms.entities.concretes.Employers;
 
+@Service
 public class EmployersManager implements EmployersService {
 	private EmployersDao employersDao;
 	
