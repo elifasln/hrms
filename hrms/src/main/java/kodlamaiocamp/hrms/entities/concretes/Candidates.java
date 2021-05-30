@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="candidates")
-public class Candidates extends User{
+public class Candidates{
 	
 	
 	@Id
@@ -32,7 +32,7 @@ public class Candidates extends User{
 	
 	
 	public Candidates(int id, String first_name, String last_name, String identity_number, int birth_year) {
-		super()
+		super();
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;

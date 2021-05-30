@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="empoloyees")
-public class Employees extends User{
+public class Employees{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

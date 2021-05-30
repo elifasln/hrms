@@ -9,7 +9,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="employers")
-public class Employers extends User{
+public class Employers{
+	
 	@Column(name="id")
 	private int id;
 	
@@ -25,7 +26,6 @@ public class Employers extends User{
 	private String phone_number;
 	
 	public Employers(int id, String company_name, String web_adress, String phone_number) {
-		super()
 		this.id = id;
 		this.company_name = company_name;
 		this.web_adress = web_adress;
