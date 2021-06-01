@@ -41,5 +41,11 @@ public class JobTitleManager implements JobTitleService {
 		// save metodu ile iş poziyonu ekleme ve güncelleme 
 		return new SuccessResult("ürün eklendi");
 	}
+	@Override
+	public Boolean existsByTitle(String title) {
+		return this.jobTitleDao.existsByTitle(title);
+
+		
+	}
 
 }

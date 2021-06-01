@@ -6,5 +6,6 @@ import kodlamaiocamp.hrms.entities.concretes.Candidates;
 
 
 public interface CandidatesDao extends JpaRepository<Candidates,Integer>{
+	Boolean existsByIdentityNumber(String identityNumber);
 
 }

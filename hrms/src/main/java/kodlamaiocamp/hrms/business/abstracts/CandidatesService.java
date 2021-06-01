@@ -9,6 +9,8 @@ import kodlamaiocamp.hrms.entities.concretes.Candidates;
 public interface CandidatesService {
 	DataResult<List<Candidates>> getAll();
 	Result add(Candidates canididates);
+	Boolean existsByIdentityNumber(String identityNumber);
+
 
 
 }

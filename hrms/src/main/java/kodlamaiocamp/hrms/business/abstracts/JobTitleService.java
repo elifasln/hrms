@@ -9,5 +9,7 @@ import kodlamaiocamp.hrms.entities.concretes.JobTitle;
 public interface JobTitleService {
 DataResult<List<JobTitle>> getAll();
 Result add(JobTitle jobTitle);
+Boolean existsByTitle(String title);
+
 
 }
