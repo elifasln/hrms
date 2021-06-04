@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="employers")
 @EqualsAndHashCode(callSuper = false)
-public class Employers{
+public class Employers extends User{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class Employers{
 	@Column(name="company_name")
 	private String companyName;
 	
-	@Column(name="web_adress")
+	@Column(name="web_address")
 	private String webAdress;
 	
 	@Column(name="phone_number")

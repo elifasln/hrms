@@ -1,5 +1,7 @@
 package kodlamaiocamp.hrms.entities.concretes;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,7 +38,7 @@ public class Candidates extends User{
 	private String identityNumber;
 	
 	@Column(name="birth_year")
-	private int birthYear;
+	private LocalDate birthYear;
 	
 	
 

@@ -9,6 +9,7 @@ import kodlamaiocamp.hrms.business.abstracts.EmployeeService;
 import kodlamaiocamp.hrms.core.utilities.results.DataResult;
 import kodlamaiocamp.hrms.core.utilities.results.Result;
 import kodlamaiocamp.hrms.core.utilities.results.SuccessDataResult;
+import kodlamaiocamp.hrms.core.utilities.results.SuccessResult;
 import kodlamaiocamp.hrms.dataAccess.abstracts.EmployeesDao;
 import kodlamaiocamp.hrms.entities.concretes.Employees;
 
@@ -32,7 +33,9 @@ private EmployeesDao employeesDao;
 
 	@Override
 	public Result add(Employees employees) {
-		return null;
+		this.employeesDao.save(employees);
+		// save metodu ile iş poziyonu ekleme ve güncelleme 
+		return new SuccessResult(" sistem personeli eklendi");
+	
 	}
-
 }

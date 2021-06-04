@@ -2,6 +2,7 @@ package kodlamaiocamp.hrms.business.concretes;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class JobTitleManager implements JobTitleService {
 		
 		return new SuccessDataResult<List<JobTitle>>
 		//ben bir SuccesDataResult döndüreceğim
-		(this.jobTitleDao.findAll(),"data listelendi");
+		(this.jobTitleDao.findAll(),"iş pozisyonları listelendi");
 		//onun datası jobTitleDao=this
 		//mesajı "data listelendi"
 	}
@@ -39,7 +40,7 @@ public class JobTitleManager implements JobTitleService {
 	public Result add(JobTitle jobTitle) {
 		this.jobTitleDao.save(jobTitle); 
 		// save metodu ile iş poziyonu ekleme ve güncelleme 
-		return new SuccessResult("ürün eklendi");
+		return new SuccessResult("iş poziyonları eklendi");
 	}
 	@Override
 	public Boolean existsByTitle(String title) {
