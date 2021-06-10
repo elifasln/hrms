@@ -22,12 +22,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class Candidates extends User{
 	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private int id;
-	
 	@Column(name="first_name")
 	private String firstName;
 	
@@ -39,7 +33,5 @@ public class Candidates extends User{
 	
 	@Column(name="birth_year")
 	private LocalDate birthYear;
-	
-	
 
 }

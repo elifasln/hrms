@@ -16,12 +16,11 @@ import kodlamaiocamp.hrms.entities.concretes.Employees;
 @Service
 public class EmployeeManager implements EmployeeService {
 private EmployeesDao employeesDao;
+
 	@Autowired
 	 public EmployeeManager(EmployeesDao employeesDao) {
 		super();
-		this.employeesDao=employeesDao;
-		
-		
+		this.employeesDao=employeesDao;			
 	}
 	
 	
@@ -31,11 +30,32 @@ private EmployeesDao employeesDao;
 		(this.employeesDao.findAll(),"sistem personeli listelendi");
 	}
 
-	@Override
-	public Result add(Employees employees) {
-		this.employeesDao.save(employees);
-		// save metodu ile iş poziyonu ekleme ve güncelleme 
-		return new SuccessResult(" sistem personeli eklendi");
-	
-	}
+//@Override
+//	public Result add(Employees employees) {
+//		this.employeesDao.save(employees);
+//		save metodu ile iş poziyonu ekleme ve güncelleme 
+//	return new SuccessResult(" sistem personeli eklendi");
+//	
+//	}
+//
+//
+//	@Override
+//	public Result delete(int id) {
+//		this.employeesDao.deleteById(id);
+//				return new SuccessResult("şehirler silindi");
+//	}
+//
+//
+//	@Override
+//	public Result update(Employees employees) {
+//		this.employeesDao.save(employees);
+//			return new SuccessResult("şehirler güncellendi");
+//	}
+//
+//
+//	@Override
+//	public DataResult<Employees> getById(int id) {
+//		return new SuccessDataResult<Employees>
+//		(this.employeesDao.getById(id));		
+//	}
 }

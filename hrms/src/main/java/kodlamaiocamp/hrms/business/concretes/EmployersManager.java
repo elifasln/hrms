@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import kodlamaiocamp.hrms.business.abstracts.EmployersService;
 import kodlamaiocamp.hrms.business.abstracts.UserService;
-import kodlamaiocamp.hrms.core.utilities.mailCheck.MailValidationManager;
 import kodlamaiocamp.hrms.core.utilities.results.DataResult;
 import kodlamaiocamp.hrms.core.utilities.results.ErrorResult;
 import kodlamaiocamp.hrms.core.utilities.results.Result;
@@ -35,7 +34,6 @@ public class EmployersManager implements EmployersService {
 		return new SuccessDataResult<List<Employers>>
 		(this.employersDao.findAll(),"işveren bilgileri listelendi");		
 		
-		
 	}
 
 	@Override
@@ -49,6 +47,26 @@ else {
 		return new ErrorResult("mail bilgilerinizi kontrol ediniz");
 }
 	}
-	
+
+//	@Override
+//	public Result delete(int id) {
+//		this.employersDao.deleteById(id);
+//			return new SuccessResult("iş arayanlar silindi");
+//
+//	}
+//
+//	@Override
+//	public Result update(Employers employers) {
+//		this.employersDao.save(employers);
+//		return new SuccessResult("iş arayanlar güncellendi");
+//
+//	}
+//
+//	@Override
+//	public DataResult<Employers> getById(int id) {
+//		return new SuccessDataResult<Employers>
+//		(this.employersDao.getById(id));	
+//	}
+//	
 
 }

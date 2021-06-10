@@ -19,17 +19,11 @@ import lombok.NoArgsConstructor;
 @Table(name="employees")
 @EqualsAndHashCode(callSuper = false)
 public class Employees extends User{
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private int id;
-	
+		
 	@Column(name="firstName")
 	private String firstName;
 	
 	@Column(name="last_name")
-	private String lastName;
-	
+	private String lastName;	
 	
 }

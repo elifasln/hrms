@@ -18,24 +18,22 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="employers")
+@AllArgsConstructor
+@Table(name="cities")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdverts"})
-@EqualsAndHashCode(callSuper = false)
-public class Employers extends User{
+public class Cities {
 	
-	@Column(name="company_name")
-	private String companyName;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
 	
-	@Column(name="web_address")
-	private String webAdress;
+	@Column(name="name")
+	private String name;
 	
-	@Column(name="phone_number")
-	private String phoneNumber;
-	
-	@OneToMany(mappedBy = "employers")
+	@OneToMany(mappedBy ="cities")
 	private List<JobAdverts> jobAdverts;
 
 }

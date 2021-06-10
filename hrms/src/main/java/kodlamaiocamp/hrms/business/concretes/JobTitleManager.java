@@ -36,6 +36,14 @@ public class JobTitleManager implements JobTitleService {
 		//onun datası jobTitleDao=this
 		//mesajı "data listelendi"
 	}
+	
+	@Override
+	public DataResult<JobTitle> getByTitle(String title) {
+		return new SuccessDataResult<JobTitle>
+		(this.jobTitleDao.findByTitle(title));
+
+}
+	
 	@Override
 	public Result add(JobTitle jobTitle) {
 		this.jobTitleDao.save(jobTitle); 
@@ -48,5 +56,24 @@ public class JobTitleManager implements JobTitleService {
 
 		
 	}
-
-}
+	
+	
+//	@Override
+//	public Result delete(int id) {
+//		
+//		this.jobTitleDao.deleteById(id);
+//	return new SuccessResult("iş poziyonları silindi");
+//
+//	}
+//	@Override
+//	public Result update(JobTitle jobTitle) {
+//		this.jobTitleDao.save(jobTitle);
+//		return new SuccessResult("iş arayanlar güncellendi");
+//
+//	}
+//	@Override
+//	public DataResult<JobTitle> getById(int id) {
+//		return new SuccessDataResult<JobTitle>
+//		(this.jobTitleDao.getById(id));	
+//	}
+	}

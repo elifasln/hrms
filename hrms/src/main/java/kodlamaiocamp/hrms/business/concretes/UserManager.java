@@ -39,5 +39,29 @@ public class UserManager implements UserService {
 		return this.userDao.existsByEmail(email);
 	}
 
+//	@Override
+//	public DataResult<User> getById(int id) {
+//		return new SuccessDataResult<User>
+//		(this.userDao.getById(id));
+//	}
+
+	@Override
+	public DataResult<User> getByEmail(String email) {
+		return new SuccessDataResult<User>
+		(this.userDao.findByEmail(email));
+	}
+
+//	@Override
+//	public Result delete(int id) {
+//		this.userDao.deleteById(id);
+//		return new SuccessDataResult<User>("kullanıcı silindi");
+//	}
+//
+//	@Override
+//	public Result update(User user) {
+//		this.userDao.save(user);
+//		return new SuccessDataResult<User>("kullanıcı güncellendi");
+//	}
+
 	
 }

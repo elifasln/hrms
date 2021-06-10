@@ -7,9 +7,19 @@ import kodlamaiocamp.hrms.core.utilities.results.Result;
 import kodlamaiocamp.hrms.entities.concretes.JobTitle;
 
 public interface JobTitleService {
-DataResult<List<JobTitle>> getAll();
-Result add(JobTitle jobTitle);
-Boolean existsByTitle(String title);
-
+	
+	Result add(JobTitle jobTitle);
+	
+//	Result delete(int id);
+	
+//	Result update(JobTitle jobTitle);
+	
+	DataResult<List<JobTitle>> getAll();  
+	
+	DataResult<JobTitle> getByTitle(String title);
+	
+//	DataResult<JobTitle> getById(int id); 
+	
+	Boolean existsByTitle(String title);
 
 }
