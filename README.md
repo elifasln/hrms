@@ -80,6 +80,9 @@ Adaylar sisteme linkedin adreslerini girebilmelidir.
 Adaylar bildikleri programlama dillerini veya teknolojilerini sisteme girebilmelidir. (Programlama/Teknoloji adı) Örneğin; React
 Adaylar sisteme ön yazı ekleyebilmelidir. (Örneğin: Çalışmayı çok severim....)
 
+#Req 13 : Bir adaya ait tüm CV bilgisi görüntülenebilmelidir.
+
+
 
 
 
