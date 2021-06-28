@@ -20,7 +20,7 @@ public interface JobAdvertsDao extends JpaRepository<JobAdverts, Integer> {
 	
 	@Query("From JobAdverts j where j.isActive='true' AND employer_id=:id")
 	List<JobAdverts> getAllByEmployerId(int id);
-	//Sitemdeki firmaya ait tüm aktif iş ilanlarını listeleme
+	//Sistemdeki firmaya ait tüm aktif iş ilanlarını listeleme
 	
 	JobAdverts getById(int id);	
 

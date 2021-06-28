@@ -5,6 +5,7 @@ import java.util.List;
 import kodlamaiocamp.hrms.core.utilities.results.DataResult;
 import kodlamaiocamp.hrms.core.utilities.results.Result;
 import kodlamaiocamp.hrms.entities.concretes.Candidates;
+import kodlamaiocamp.hrms.entities.dtos.CandidatesCvDto;
 
 public interface CandidatesService {
 
@@ -20,6 +21,8 @@ public interface CandidatesService {
 	
 	DataResult<Candidates> getById(int id);
 	
+	DataResult<CandidatesCvDto> getCandidatesCvById(int id);
+
 	Boolean existsByIdentityNumber(String identityNumber);
 
 }

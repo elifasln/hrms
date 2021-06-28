@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlamaiocamp.hrms.business.abstracts.CandidatesService;
 import kodlamaiocamp.hrms.core.utilities.results.DataResult;
 import kodlamaiocamp.hrms.core.utilities.results.Result;
 import kodlamaiocamp.hrms.entities.concretes.Candidates;
+import kodlamaiocamp.hrms.entities.dtos.CandidatesCvDto;
 
 @RestController
 @RequestMapping("/api/candidates")
@@ -37,5 +39,9 @@ public class CandidateController {
 	public Result add(@RequestBody Candidates candidates) {
 		return this.candidatesService.add(candidates);
 		
+	}
+	@GetMapping("/getCandidatesCvById")
+	public DataResult<CandidatesCvDto> getCandidatesCvById(@RequestParam int id){
+		return this.candidatesService.getCandidatesCvById(id);
 	}
 }
